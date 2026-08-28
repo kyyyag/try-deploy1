@@ -2,7 +2,7 @@ name: Deploy Astro site to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Sesuaikan dengan branch utama Anda (main/master)
+    branches: ["nyoba"]
   workflow_dispatch:
 
 permissions:
@@ -16,11 +16,10 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        # Jika Astro Anda ada di dalam sub-folder (contoh: sterlinknew/frontend), 
-        # hapus tanda pagar di bawah ini dan sesuaikan path-nya:
-        # with:
+        with:
           path: ./sterlinknew/frontend
 
   deploy:
