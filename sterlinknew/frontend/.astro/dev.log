@@ -43,3 +43,10 @@
 [2m19:56:57[22m [34m[vite][39m connected.
 [2m19:56:57[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
 [2m19:56:57[22m [34m[vite][39m server restarted.
+[2m20:15:37[22m Configuration file added. Restarting...
+[2m20:15:37[22m [34m[vite][39m changed tsconfig file detected: C:/Users/STERLINK-OPS-LP/Documents/try deploy1/sterlinknew/frontend/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m20:15:37[22m [34m[vite][39m program reload
+[2m20:15:37[22m [34m[vite][39m connected.
+[2m20:15:42[22m [34m[vite][39m connected.
+[2m20:15:42[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
+[2m20:15:42[22m [34m[vite][39m server restarted.
