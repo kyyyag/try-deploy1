@@ -1,7 +1,8 @@
 ---
 import { siteConfig } from '../data/siteConfig.js';
 const waLink = siteConfig.getWaLink("Halo Admin SterlinkNet, saya ingin bertanya tentang paket internet.");
-const base = import.meta.env.BASE_URL;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
 ---
 
 <header class="sticky top-0 z-50 bg-[#0a0a1a]/90 backdrop-blur-xl border-b border-indigo-500/10 shadow-lg shadow-indigo-900/5 transition-all duration-300">
