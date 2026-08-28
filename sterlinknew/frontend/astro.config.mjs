@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
 
-// https://astro.build/config
 export default defineConfig({
+  // Jangan lupa site dan base untuk GitHub Pages dari langkah sebelumnya
   site: 'https://kyyyag.github.io',
-  base: '/try-deploy1', // Pastikan ini sama persis dengan nama repository Anda
+  base: '/try-deploy1',
+  integrations: [tailwind()],
 });
