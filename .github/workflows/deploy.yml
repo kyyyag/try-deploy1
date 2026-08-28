@@ -1,0 +1,35 @@
+name: Deploy Astro site to GitHub Pages
+
+on:
+  push:
+    branches: ["main"] # Sesuaikan dengan branch utama Anda (main/master)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
+        # Jika Astro Anda ada di dalam sub-folder (contoh: sterlinknew/frontend), 
+        # hapus tanda pagar di bawah ini dan sesuaikan path-nya:
+        # with:
+          path: ./sterlinknew/frontend
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
