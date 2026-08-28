@@ -1,0 +1,28 @@
+buatkan issue.md dengan planning sebagai berikut :
+
+1. implementasikan logo.png yang pada /sterlinknew/frontend/src/assets/images
+2. ganti semua yang berhubungan dengan 2018 atau tahun bediri dengan tahun 2026 saja serta keseluruhan yang berhubungan dengan pengalaman atau pun 2018
+3. hapus semua kota cabang dan sisakan hanya surabaya lalu ganti dengan alamat ini 
+    a. Jl. Darmokali No.61, RT. 004, RW 004, Kel. Darmo, Kec. Wonokromo, Surabaya, Jawa Timur 60241
+4. implementasikan untuk no wa : +6281510781558
+    a. untuk WA (informasi aktivasi&paket) : 0817383337
+    b. untuk WA CS: 0818129969
+5. implementasikan link sosial media :
+    a. IG: https://www.instagram.com/sterlinknet?igsi=MTdrODhkMGdnbmY0MA==
+    b. FB: https://www.facebook.com/share/1EQ67ziAr4/
+    c. email : @sterlinknet 
+6. implementasikan pakages dengan skema sebagai berikut :
+    a. omp1-20 paket 1 bulan -20Mbps Harga Rp.155.000,- + biaya aktivasi Rp50.000,-
+    b. omp3-20 paket 3 bulan -20Mbps Harga Rp.450.000,- 
+    c. omp6-20 paket 6 bulan -20Mbps Harga Rp.870.000,-
+    d. omp12-20 paket 12 bulan -20Mbps Harga Rp.1.680.000,-
+    e. omp1-35 paket 1 bulan 35Mbps Harga Rp.180.000,- + biaya aktivasi Rp50.000,-
+    f. omp3-35 paket 3 bulan 35Mbps Harga Rp.525.000,-
+    g. omp6-35 paket 6 bulan 35Mbps Harga Rp.1.020.000,-
+    h. omp12-35 paket 12 bulan 35Mbps Harga Rp.1.980.000,-
+    i. omp1-50 paket 1 bulan -50Mbps Harga Rp.230.000,- + biaya aktivasi Rp50.000,-
+    j. omp3-50 paket 3 bulan -50Mbps Harga Rp.675.000,-
+    k. omp6-50 paket 6 bulan -50Mbps Harga Rp.1.320.000,-
+    l. omp12-50 paket 12 bulan -50Mbps Harga Rp.2.580.000,-
+7. ganti icon untuk title dengan source difolder ../sterlinknew/frontend/src/assets/images/icon
+8. ganti navbar "sterlinknew" dengan gambar yang ada di source ../sterlinknew/frontend/src/assets/images/sterlink_name.png

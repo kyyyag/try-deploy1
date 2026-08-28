@@ -1,0 +1,17 @@
+{
+  "name": "sterlink-ops-project",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix sterlinknew/frontend run dev",
+    "dev:frontend": "npm --prefix sterlinknew/frontend run dev",
+    "dev:backend": "php sterlinknew/backend/artisan serve",
+    "build": "npm --prefix sterlinknew/frontend run build",
+    "preview": "npm --prefix sterlinknew/frontend run preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.2.4",
+    "tailwindcss": "^4.3.3"
+  }
+}

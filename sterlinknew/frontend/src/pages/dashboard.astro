@@ -1,0 +1,348 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Dashboard">
+  <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="px-4 py-6 sm:px-0 space-y-6">
+      
+      <!-- Welcome Header -->
+      <div class="bg-white overflow-hidden shadow-xl sm:rounded-2xl p-6 sm:p-10 border border-gray-100">
+        <div class="md:flex md:items-center md:justify-between">
+          <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-normal text-gray-900 sm:text-3xl pb-1" id="welcome-message">
+              Selamat datang!
+            </h2>
+            <p class="mt-1 text-sm text-gray-500">
+              Anda berhasil masuk ke dashboard sistem Sterlink Ops.
+            </p>
+          </div>
+        </div>
+
+        <!-- Global Toast Success Banner -->
+        <div id="toast-success" class="hidden mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg shadow-sm">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm font-medium text-green-800" id="toast-success-text">Profil berhasil diperbarui!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Left Column: User Profile Card -->
+          <div class="lg:col-span-1 bg-gray-50 p-6 rounded-xl border border-gray-200/80 shadow-sm h-fit">
+            <div class="flex items-center space-x-4 pb-4 border-b border-gray-200">
+              <div class="h-12 w-12 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-xl uppercase shadow-md" id="user-avatar">
+                U
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-900" id="card-user-name">Loading...</h3>
+                <p class="text-xs text-gray-500" id="card-user-email">Loading...</p>
+              </div>
+            </div>
+
+            <dl class="mt-4 divide-y divide-gray-200 text-sm">
+              <div class="py-3 flex justify-between">
+                <dt class="text-gray-500">Status Akun</dt>
+                <dd>
+                  <span class="px-2.5 py-0.5 inline-flex text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                    Aktif
+                  </span>
+                </dd>
+              </div>
+              <div class="py-3 flex justify-between">
+                <dt class="text-gray-500">Peran System</dt>
+                <dd class="font-medium text-gray-900">User / Member</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Right Column: Form Edit Profil User (INLINE FORM) -->
+          <div class="lg:col-span-2 bg-white p-6 sm:p-8 rounded-xl border border-gray-200/80 shadow-sm">
+            <div class="flex items-center space-x-3 pb-4 border-b border-gray-200">
+              <svg class="h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">Form Edit Profil User</h3>
+                <p class="text-xs text-gray-500">Perbarui nama lengkap, alamat email, atau kata sandi Anda di bawah ini.</p>
+              </div>
+            </div>
+
+            <!-- Form Error Alert -->
+            <div id="form-error" class="hidden mt-4 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <svg class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <p class="text-sm text-red-700 font-medium" id="form-error-text">Gagal memperbarui profil</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Inline Edit Form -->
+            <form id="edit-profile-form" class="mt-6 space-y-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Nama Lengkap -->
+                <div>
+                  <label for="edit-name" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                  <input
+                    type="text"
+                    id="edit-name"
+                    name="name"
+                    required
+                    class="mt-1 block w-full px-3.5 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                    placeholder="Masukkan nama lengkap"
+                  />
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label for="edit-email" class="block text-sm font-medium text-gray-700">Alamat Email</label>
+                  <input
+                    type="email"
+                    id="edit-email"
+                    name="email"
+                    required
+                    class="mt-1 block w-full px-3.5 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                    placeholder="nama@email.com"
+                  />
+                </div>
+              </div>
+
+              <!-- Password Section -->
+              <div class="border-t border-gray-100 pt-6">
+                <h4 class="text-sm font-semibold text-gray-900">Ubah Kata Sandi</h4>
+                <p class="text-xs text-gray-500 mb-4">Biarkan kosong jika tidak ingin mengganti. Minimal 8 karakter (kombinasi uppercase, lowercase, & angka/simbol).</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <!-- Password Baru -->
+                  <div>
+                    <label for="edit-password" class="block text-sm font-medium text-gray-700">Kata Sandi Baru</label>
+                    <input
+                      type="password"
+                      id="edit-password"
+                      name="password"
+                      minlength="8"
+                      placeholder="••••••••"
+                      class="mt-1 block w-full px-3.5 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                    />
+                  </div>
+
+                  <!-- Konfirmasi Password -->
+                  <div>
+                    <label for="edit-password-confirm" class="block text-sm font-medium text-gray-700">Konfirmasi Kata Sandi Baru</label>
+                    <input
+                      type="password"
+                      id="edit-password-confirm"
+                      name="password_confirmation"
+                      placeholder="••••••••"
+                      class="mt-1 block w-full px-3.5 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-4 flex justify-end">
+                <button
+                  type="submit"
+                  id="save-profile-btn"
+                  class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-md transition-all cursor-pointer"
+                >
+                  <svg class="-ml-1 mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  Simpan Perubahan
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const token = localStorage.getItem('auth_token');
+    
+    if (!token) {
+      window.location.href = '/login';
+    } else {
+      const envUrl = (import.meta as ImportMeta & { env?: { PUBLIC_API_URL?: string } }).env?.PUBLIC_API_URL || 'http://localhost:8000/api';
+      const apiUrl = envUrl.replace(/\/+$/, '').endsWith('/api') ? envUrl.replace(/\/+$/, '') : `${envUrl.replace(/\/+$/, '')}/api`;
+
+      const editForm = document.getElementById('edit-profile-form') as HTMLFormElement;
+      const editNameInput = document.getElementById('edit-name') as HTMLInputElement;
+      const editEmailInput = document.getElementById('edit-email') as HTMLInputElement;
+      const editPasswordInput = document.getElementById('edit-password') as HTMLInputElement;
+      const editPasswordConfirmInput = document.getElementById('edit-password-confirm') as HTMLInputElement;
+
+      const cardNameEl = document.getElementById('card-user-name');
+      const cardEmailEl = document.getElementById('card-user-email');
+      const welcomeEl = document.getElementById('welcome-message');
+      const avatarEl = document.getElementById('user-avatar');
+
+      const formError = document.getElementById('form-error');
+      const formErrorText = document.getElementById('form-error-text');
+      const saveBtn = document.getElementById('save-profile-btn') as HTMLButtonElement;
+      const toastSuccess = document.getElementById('toast-success');
+      const toastSuccessText = document.getElementById('toast-success-text');
+
+      const populateData = (userData: { name: string; email: string }) => {
+        if (cardNameEl) cardNameEl.textContent = userData.name;
+        if (cardEmailEl) cardEmailEl.textContent = userData.email;
+        if (welcomeEl) welcomeEl.textContent = `Selamat datang kembali, ${userData.name}!`;
+        if (avatarEl) avatarEl.textContent = userData.name ? userData.name.charAt(0).toUpperCase() : 'U';
+
+        if (editNameInput) editNameInput.value = userData.name || '';
+        if (editEmailInput) editEmailInput.value = userData.email || '';
+      };
+
+      // Fetch user data securely from backend API
+      const fetchUserData = async () => {
+        try {
+          const response = await fetch(`${apiUrl}/user`, {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (!response.ok) {
+            throw new Error('Unauthorized');
+          }
+          
+          const userData = await response.json();
+          populateData(userData);
+          localStorage.setItem('user', JSON.stringify(userData));
+          
+        } catch (error) {
+          console.error('Failed to fetch user data', error);
+          localStorage.removeItem('auth_token');
+          localStorage.removeItem('user');
+          window.location.href = '/login';
+        }
+      };
+
+      fetchUserData();
+
+      // Handle Edit Profile Submission
+      editForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        if (formError) formError.classList.add('hidden');
+
+        const name = editNameInput.value.trim();
+        const email = editEmailInput.value.trim();
+        const password = editPasswordInput.value;
+        const passwordConfirmation = editPasswordConfirmInput.value;
+
+        if (password) {
+          const hasUpper = /[A-Z]/.test(password);
+          const hasLower = /[a-z]/.test(password);
+          const hasNumberOrSymbol = /[\d\W]/.test(password);
+
+          if (password.length < 8 || !hasUpper || !hasLower || !hasNumberOrSymbol) {
+            if (formError && formErrorText) {
+              formErrorText.textContent = 'Kata sandi minimal 8 karakter dengan kombinasi huruf besar (uppercase), huruf kecil (lowercase), serta angka/simbol.';
+              formError.classList.remove('hidden');
+            }
+            return;
+          }
+
+          if (password !== passwordConfirmation) {
+            if (formError && formErrorText) {
+              formErrorText.textContent = 'Konfirmasi kata sandi tidak cocok.';
+              formError.classList.remove('hidden');
+            }
+            return;
+          }
+        }
+
+        saveBtn.disabled = true;
+        saveBtn.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Menyimpan...
+        `;
+
+        const payload: Record<string, string> = { name, email };
+        if (password) {
+          payload.password = password;
+        }
+
+        try {
+          const response = await fetch(`${apiUrl}/user`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(payload)
+          });
+
+          const result = await response.json();
+
+          if (!response.ok) {
+            let errorMsg = result.message || 'Gagal memperbarui profil.';
+            if (result.errors) {
+              const firstErrorKey = Object.keys(result.errors)[0];
+              if (firstErrorKey && result.errors[firstErrorKey].length > 0) {
+                errorMsg = result.errors[firstErrorKey][0];
+              }
+            }
+            throw new Error(errorMsg);
+          }
+
+          // Update UI state & LocalStorage
+          populateData(result.user);
+          localStorage.setItem('user', JSON.stringify(result.user));
+
+          // Clear password fields
+          if (editPasswordInput) editPasswordInput.value = '';
+          if (editPasswordConfirmInput) editPasswordConfirmInput.value = '';
+
+          // Show Toast Success Banner
+          if (toastSuccess && toastSuccessText) {
+            toastSuccessText.textContent = result.message || 'Profil berhasil diperbarui!';
+            toastSuccess.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => {
+              toastSuccess.classList.add('hidden');
+            }, 5000);
+          }
+
+        } catch (err: any) {
+          if (formError && formErrorText) {
+            formErrorText.textContent = err.message || 'Terjadi kesalahan saat menyimpan data.';
+            formError.classList.remove('hidden');
+          }
+        } finally {
+          saveBtn.disabled = false;
+          saveBtn.innerHTML = `
+            <svg class="-ml-1 mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Simpan Perubahan
+          `;
+        }
+      });
+    }
+  </script>
+</Layout>

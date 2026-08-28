@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import AboutSection from '../components/AboutSection.astro';
+import PricingSection from '../components/PricingSection.astro';
+import BranchesSection from '../components/BranchesSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { siteConfig } from '../data/siteConfig.js';
+---
+
+<Layout 
+  title={`${siteConfig.company.name} | ${siteConfig.company.tagline}`}
+  description={siteConfig.company.shortIdea}
+>
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- About Us Summary Section -->
+  <AboutSection />
+
+  <!-- Interactive Pricing / Packages Section -->
+  <PricingSection />
+
+  <!-- Multi-City Branches & Coverage -->
+  <BranchesSection />
+
+  <!-- Contact Us & WhatsApp Direct Trigger -->
+  <ContactSection />
+</Layout>
