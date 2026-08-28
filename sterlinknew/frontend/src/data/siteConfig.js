@@ -62,6 +62,7 @@ export const siteConfig = {
       period: "bulan",
       activationFee: "50.000",
       isPopular: false,
+      popularTag: "",
       description: "Paket 1 bulan dengan kecepatan 20 Mbps. Cocok untuk browsing, media sosial, dan streaming.",
       features: [
         "Kecepatan hingga 20 Mbps",
@@ -83,6 +84,7 @@ export const siteConfig = {
       period: "bulan",
       activationFee: "50.000",
       isPopular: false,
+      popularTag: "",
       description: "Paket 1 bulan dengan kecepatan 35 Mbps. Pas untuk keluarga kecil dan streaming HD.",
       features: [
         "Kecepatan hingga 35 Mbps",
@@ -105,6 +107,7 @@ export const siteConfig = {
       period: "bulan",
       activationFee: "50.000",
       isPopular: false,
+      popularTag: "",
       description: "Paket 1 bulan dengan kecepatan 50 Mbps. Ideal untuk gaming, 4K streaming, dan WFH.",
       features: [
         "Kecepatan hingga 50 Mbps",
@@ -112,7 +115,6 @@ export const siteConfig = {
         "Unlimited Kuota (Tanpa FUP)",
         "Biaya Aktivasi Rp 50.000",
         "Dukungan CS 24/7"
-      ]
       ]
     }
   ],
