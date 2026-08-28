@@ -1,0 +1,59 @@
+---
+// This will run on the server to fetch data from Laravel API
+const envUrl = import.meta.env.PUBLIC_API_URL || 'http://localhost:8000/api';
+const apiUrl = envUrl.replace(/\/+$/, '').endsWith('/api') ? envUrl.replace(/\/+$/, '') : `${envUrl.replace(/\/+$/, '')}/api`;
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+let users: User[] = [];
+let error: string | null = null;
+
+try {
+  const token = typeof localStorage !== 'undefined' ? localStorage.getItem('auth_token') : null;
+  const headers: Record<string, string> = token ? { 'Authorization': `Bearer ${token}` } : {};
+  const response = await fetch(`${apiUrl}/users`, { headers });
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  users = await response.json();
+} catch (e: any) {
+  error = e.message;
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daftar Pengguna</title>
+  </head>
+  <body>
+    <main style="max-width: 800px; margin: 0 auto; padding: 2rem; font-family: sans-serif;">
+      <h1>Daftar Pengguna dari Laravel API</h1>
+      
+      {error && (
+        <div style="background-color: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+          <strong>Error:</strong> Gagal mengambil data dari API Laravel ({error}).<br/>
+          Pastikan backend Laravel berjalan di port 8000.
+        </div>
+      )}
+
+      {!error && users.length === 0 && (
+        <p>Belum ada data pengguna.</p>
+      )}
+
+      {users.length > 0 && (
+        <ul style="list-style-type: none; padding: 0;">
+          {users.map((user: User) => (
+            <li style="padding: 1rem; border: 1px solid #ccc; margin-bottom: 0.5rem; border-radius: 0.5rem;">
+              <strong>{user.name}</strong> - {user.email}
+            </li>
+          ))}
+        </ul>
+      )}
+    </main>
+  </body>
+</html>
