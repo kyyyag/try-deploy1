@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
 ---
 
 <Layout title="Log in">
@@ -9,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="mt-2 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
         <p class="mt-2 text-center text-sm text-gray-600">
           Or
-          <a href="/register" class="font-medium text-indigo-600 hover:text-indigo-500">
+          <a href={`${base}register`} class="font-medium text-indigo-600 hover:text-indigo-500">
             create a new account
           </a>
         </p>
@@ -50,9 +52,12 @@ import Layout from '../layouts/Layout.astro';
   </div>
 
   <script>
+    const rawBase = import.meta.env.BASE_URL;
+    const clientBase = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+
     // Redirect if already logged in
     if (localStorage.getItem('auth_token')) {
-      window.location.href = '/dashboard';
+      window.location.href = `${clientBase}dashboard`;
     }
 
     const form = document.getElementById('login-form') as HTMLFormElement;
@@ -93,7 +98,7 @@ import Layout from '../layouts/Layout.astro';
         localStorage.setItem('user', JSON.stringify(result.user));
         
         // Redirect
-        window.location.href = '/dashboard';
+        window.location.href = `${clientBase}dashboard`;
       } catch (err: any) {
         if (errorBox && errorText) {
           errorText.innerText = err.message;

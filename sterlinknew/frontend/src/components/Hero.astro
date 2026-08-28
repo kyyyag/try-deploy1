@@ -3,6 +3,8 @@ import { siteConfig } from "../data/siteConfig.js";
 const waLink = siteConfig.getWaLink(
   "Halo Admin SterlinkNet, saya ingin konsultasi paket internet yang cocok untuk kebutuhan saya.",
 );
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
 ---
 
 <section
@@ -66,7 +68,7 @@ const waLink = siteConfig.getWaLink(
 
           <!-- View Packages CTA -->
           <a
-            href="/packages"
+            href={`${base}packages`}
             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-gray-200 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-indigo-500/30 transition-all"
           >
             Lihat Paket Layanan
