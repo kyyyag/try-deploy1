@@ -2,7 +2,7 @@ name: Deploy Astro site to GitHub Pages
 
 on:
   push:
-    branches: ["nyoba"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -21,6 +21,7 @@ jobs:
         uses: withastro/action@v3
         with:
           path: ./sterlinknew/frontend
+          node-version: 22 # Baris ini ditambahkan untuk mengatasi error Node.js
 
   deploy:
     needs: build
