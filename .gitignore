@@ -1,0 +1,19 @@
+# Node.js & Astro generated files
+node_modules/
+.dist/
+.astro/
+# Build output
+dist/
+# Environment files (avoid committing secrets)
+.env
+.env.*
+# OS files
+Thumbs.db
+.DS_Store
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# IDE files
+.vscode/
+sterlinknew/backend/
