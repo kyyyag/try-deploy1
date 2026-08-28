@@ -28,6 +28,7 @@ jobs:
         with:
           path: ./sterlinknew/frontend
           node-version: "22"
+          package-manager: npm
 
   deploy:
     needs: build
