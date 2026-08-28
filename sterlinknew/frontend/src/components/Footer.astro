@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from "../data/siteConfig.js";
 const waLink = siteConfig.getWaLink();
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="bg-[#060614] text-gray-400 border-t border-indigo-500/10">
@@ -10,13 +11,13 @@ const waLink = siteConfig.getWaLink();
       <div class="lg:col-span-2 space-y-4">
         <div class="flex items-center gap-3">
           <img
-            src="/images/Logo.png"
+            src={`${base}images/Logo.png`}
             alt="Sterlink Logo"
             class="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(99,102,241,0.3)]"
           />
           <div class="flex flex-col">
             <img
-              src="/images/sterlink-name.jpeg"
+              src={`${base}images/sterlink-name.jpeg`}
               alt={siteConfig.company.name}
               class="h-6 w-auto object-contain brightness-0 invert opacity-90"
             />
@@ -89,16 +90,16 @@ const waLink = siteConfig.getWaLink();
         </h4>
         <ul class="space-y-2.5 text-sm">
           <li>
-            <a href="/" class="hover:text-indigo-400 transition-colors">Home</a>
+            <a href={base} class="hover:text-indigo-400 transition-colors">Home</a>
           </li>
           <li>
-            <a href="/about" class="hover:text-indigo-400 transition-colors">Tentang Kami</a>
+            <a href={`${base}about`} class="hover:text-indigo-400 transition-colors">Tentang Kami</a>
           </li>
           <li>
-            <a href="/packages" class="hover:text-indigo-400 transition-colors">Paket Layanan</a>
+            <a href={`${base}packages`} class="hover:text-indigo-400 transition-colors">Paket Layanan</a>
           </li>
           <li>
-            <a href="/contact" class="hover:text-indigo-400 transition-colors">Kontak & Cabang</a>
+            <a href={`${base}contact`} class="hover:text-indigo-400 transition-colors">Kontak & Cabang</a>
           </li>
         </ul>
       </div>
@@ -110,7 +111,7 @@ const waLink = siteConfig.getWaLink();
         </h4>
         <ul class="space-y-2.5 text-sm">
           <li>
-            <a href="/packages" class="hover:text-indigo-400 transition-colors">Internet Rumah (Fiber)</a>
+            <a href={`${base}packages`} class="hover:text-indigo-400 transition-colors">Internet Rumah (Fiber)</a>
           </li>
           <li>
             <a href={siteConfig.getCSWaLink("Halo CS SterlinkNet, saya tertarik dengan layanan Internet Bisnis & UKM.")} target="_blank" class="hover:text-indigo-400 transition-colors">Internet Bisnis & UKM</a>

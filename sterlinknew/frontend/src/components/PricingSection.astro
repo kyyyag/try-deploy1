@@ -18,37 +18,7 @@ import { siteConfig } from '../data/siteConfig.js';
       </p>
     </div>
 
-    <!-- Interactive Speed Filter Tabs -->
-    <div class="mt-10 flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
-      <button 
-        type="button" 
-        data-filter="all" 
-        class="filter-btn active px-6 py-2.5 rounded-full text-sm font-bold transition-all bg-indigo-600 text-white shadow-md shadow-indigo-600/20 cursor-pointer"
-      >
-        ⚡ Semua Paket
-      </button>
-      <button 
-        type="button" 
-        data-filter="20mbps" 
-        class="filter-btn px-6 py-2.5 rounded-full text-sm font-bold transition-all bg-white/5 text-gray-400 hover:bg-white/10 border border-white/10 cursor-pointer"
-      >
-        🚀 20 Mbps
-      </button>
-      <button 
-        type="button" 
-        data-filter="35mbps" 
-        class="filter-btn px-6 py-2.5 rounded-full text-sm font-bold transition-all bg-white/5 text-gray-400 hover:bg-white/10 border border-white/10 cursor-pointer"
-      >
-        ⚡ 35 Mbps
-      </button>
-      <button 
-        type="button" 
-        data-filter="50mbps" 
-        class="filter-btn px-6 py-2.5 rounded-full text-sm font-bold transition-all bg-white/5 text-gray-400 hover:bg-white/10 border border-white/10 cursor-pointer"
-      >
-        🔥 50 Mbps
-      </button>
-    </div>
+
 
     <!-- Interactive Package Cards Grid — CENTERED max 3 columns -->
     <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -163,32 +133,3 @@ import { siteConfig } from '../data/siteConfig.js';
 
   </div>
 </section>
-
-<!-- Client-side Interactive Filter Script -->
-<script>
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.package-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Toggle active classes
-      filterBtns.forEach(b => {
-        b.classList.remove('active', 'bg-indigo-600', 'text-white', 'shadow-md', 'shadow-indigo-600/20');
-        b.classList.add('bg-white/5', 'text-gray-400', 'border', 'border-white/10');
-      });
-      btn.classList.add('active', 'bg-indigo-600', 'text-white', 'shadow-md', 'shadow-indigo-600/20');
-      btn.classList.remove('bg-white/5', 'text-gray-400', 'border', 'border-white/10');
-
-      const filterValue = btn.getAttribute('data-filter');
-
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) {
-          (card as HTMLElement).style.display = 'flex';
-        } else {
-          (card as HTMLElement).style.display = 'none';
-        }
-      });
-    });
-  });
-</script>

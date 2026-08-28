@@ -113,62 +113,6 @@ export const siteConfig = {
         "Biaya Aktivasi Rp 50.000",
         "Dukungan CS 24/7"
       ]
-    },
-    {
-      id: "omp3-50",
-      category: "50mbps",
-      name: "OMP3-50",
-      speed: "50 Mbps",
-      duration: "3 Bulan",
-      price: "675.000",
-      period: "3 bulan",
-      activationFee: null,
-      isPopular: false,
-      description: "Paket 3 bulan hemat dengan kecepatan 50 Mbps. Tanpa biaya aktivasi tambahan.",
-      features: [
-        "Kecepatan hingga 50 Mbps",
-        "Durasi 3 Bulan",
-        "Unlimited Kuota (Tanpa FUP)",
-        "Gratis Biaya Aktivasi",
-        "Dukungan CS 24/7"
-      ]
-    },
-    {
-      id: "omp6-50",
-      category: "50mbps",
-      name: "OMP6-50",
-      speed: "50 Mbps",
-      duration: "6 Bulan",
-      price: "1.320.000",
-      period: "6 bulan",
-      activationFee: null,
-      isPopular: false,
-      description: "Paket 6 bulan super hemat dengan kecepatan 50 Mbps. Makin lama makin murah!",
-      features: [
-        "Kecepatan hingga 50 Mbps",
-        "Durasi 6 Bulan",
-        "Unlimited Kuota (Tanpa FUP)",
-        "Gratis Biaya Aktivasi",
-        "Dukungan CS 24/7"
-      ]
-    },
-    {
-      id: "omp12-50",
-      category: "50mbps",
-      name: "OMP12-50",
-      speed: "50 Mbps",
-      duration: "12 Bulan",
-      price: "2.580.000",
-      period: "12 bulan",
-      activationFee: null,
-      isPopular: false,
-      description: "Paket tahunan premium kecepatan 50 Mbps. Harga paling hemat per bulan!",
-      features: [
-        "Kecepatan hingga 50 Mbps",
-        "Durasi 12 Bulan",
-        "Unlimited Kuota (Tanpa FUP)",
-        "Gratis Biaya Aktivasi",
-        "Dukungan CS 24/7"
       ]
     }
   ],
