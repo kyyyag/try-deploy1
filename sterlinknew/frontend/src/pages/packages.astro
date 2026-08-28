@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PricingSection from '../components/PricingSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { siteConfig } from '../data/siteConfig.js';
+---
+
+<Layout 
+  title={`Paket Layanan Internet | ${siteConfig.company.name}`}
+  description="Daftar lengkap paket internet fiber optic SterlinkNet untuk rumah, gaming, bisnis, dan korporat tanpa FUP."
+>
+  <!-- Page Header -->
+  <div class="bg-gradient-to-b from-[#0d0d2b] to-[#0a0a1a] py-16 sm:py-20 border-b border-indigo-500/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block text-xs font-black tracking-widest text-indigo-400 uppercase mb-2">
+        Katalog Layanan
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight">
+        Pilihan Paket Internet SterlinkNet
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+        Koneksi fiber optic murni dengan kecepatan simetris 1:1, bebas kuota, dan harga bulanan yang bersahabat.
+      </p>
+    </div>
+  </div>
+
+  <!-- Interactive Pricing Section -->
+  <PricingSection />
+
+  <!-- FAQ Section for Packages -->
+  <section class="py-16 bg-[#0d0d2b] border-t border-indigo-500/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-black text-white text-center mb-10">
+        Pertanyaan Sering Ditanyakan (FAQ)
+      </h2>
+
+      <div class="space-y-4">
+        
+        <div class="glass-card p-6 rounded-2xl">
+          <h3 class="text-base font-bold text-white mb-2">Apakah ada batas pemakaian wajar (FUP)?</h3>
+          <p class="text-sm text-gray-400">
+            Tidak ada. Semua paket layanan SterlinkNet bersifat True Unlimited tanpa penurunan kecepatan (No FUP).
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <h3 class="text-base font-bold text-white mb-2">Apakah kecepatan download dan upload simetris?</h3>
+          <p class="text-sm text-gray-400">
+            Ya, jaringan 100% Fiber Optic kami memberikan rasio simetris 1:1 sehingga sangat lancar untuk live streaming, upload file besar, maupun video conference.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <h3 class="text-base font-bold text-white mb-2">Bagaimana cara mendaftar dan proses pemasangannya?</h3>
+          <p class="text-sm text-gray-400">
+            Sangat mudah! Cukup klik tombol "Pesan via WhatsApp" pada paket yang Anda inginkan, admin kami akan mengecek ketersediaan tiang fiber di alamat Anda dan menjadwalkan teknisi untuk instalasi.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Direct WhatsApp -->
+  <ContactSection />
+</Layout>

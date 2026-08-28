@@ -1,0 +1,5 @@
+buatkan issue.md dengan planning sebagai berikut :
+
+1. kaitkan images icon di title dan di navbar dan footernya serta images sterlinknet yang ada di images untuk nama ini berada dinavbar dan di footernya
+2. centerkan untuk gambar packages 3 yang ada dihalaman agar ditengah
+3. ubah tampilan menjadi themes aeon astro lalu implementasikan di project ini atau folder /sterlinknew

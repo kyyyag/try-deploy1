@@ -1,0 +1,87 @@
+---
+import { siteConfig } from '../data/siteConfig.js';
+---
+
+<section id="branches" class="py-20 bg-[#0d0d2b] border-t border-indigo-500/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-300 text-xs font-bold uppercase tracking-wider border border-blue-500/20">
+        Jangkauan & Kantor Layanan
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+        Kantor Layanan Kami di Surabaya
+      </h2>
+      <p class="text-base sm:text-lg text-gray-400">
+        Infrastruktur kami siap menjangkau kediaman dan tempat usaha Anda di wilayah Surabaya dan sekitarnya dengan dukungan tim teknisi lokal yang handal.
+      </p>
+    </div>
+
+    <!-- Branch Address Cards Grid -->
+    <div class="mt-14 max-w-xl mx-auto">
+      {siteConfig.branchAddresses.map((branch) => {
+        const branchWaLink = siteConfig.getWaLink(`Halo Admin SterlinkNet, saya ingin bertanya jangkauan fiber internet di area ${branch.city}.`);
+        return (
+          <div class={`glass-card rounded-3xl p-8 transition-all duration-200 flex flex-col justify-between ${
+            branch.isHeadquarters 
+              ? 'border-indigo-500/30 shadow-md glow-indigo ring-1 ring-indigo-500/20' 
+              : 'hover:border-indigo-500/25'
+          }`}>
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class={`text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full ${
+                  branch.isHeadquarters ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'bg-white/5 text-gray-400'
+                }`}>
+                  {branch.isHeadquarters ? '⭐ Kantor Pusat' : 'Kantor Cabang'}
+                </span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              </div>
+
+              <h3 class="text-xl font-bold text-white mb-3">{branch.city}</h3>
+              
+              <!-- Address Details -->
+              <div class="space-y-3 text-sm text-gray-400 mb-6">
+                <div class="flex items-start gap-2.5">
+                  <svg class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span class="leading-relaxed">{branch.address}</span>
+                </div>
+
+                <div class="flex items-center gap-2.5 text-xs text-gray-500">
+                  <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span>{branch.phone}</span>
+                </div>
+
+                <div class="flex items-center gap-2.5 text-xs text-gray-500">
+                  <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>{branch.email}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct WA inquiry for this city -->
+            <div class="pt-4 border-t border-indigo-500/15">
+              <a
+                href={branchWaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold text-indigo-300 bg-indigo-500/10 hover:bg-indigo-500/20 transition-colors border border-indigo-500/20"
+              >
+                Cek Coverage {branch.city} via WA &rarr;
+              </a>
+            </div>
+
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</section>

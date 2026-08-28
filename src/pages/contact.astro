@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactSection from '../components/ContactSection.astro';
+import BranchesSection from '../components/BranchesSection.astro';
+import { siteConfig } from '../data/siteConfig.js';
+---
+
+<Layout 
+  title={`Kontak & Kantor Layanan | ${siteConfig.company.name}`}
+  description={`Hubungi admin WhatsApp ${siteConfig.company.name} atau kunjungi kantor layanan kami di Surabaya.`}
+>
+  <!-- Page Header -->
+  <div class="bg-gradient-to-b from-[#0d0d2b] to-[#0a0a1a] py-16 sm:py-20 border-b border-indigo-500/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block text-xs font-black tracking-widest text-emerald-400 uppercase mb-2">
+        Hubungi & Kunjungi Kami
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight">
+        Kontak & Lokasi Kantor Surabaya
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+        Layanan pelanggan 24/7 dan tim representatif kami siap melayani kebutuhan konektivitas internet Anda di wilayah Surabaya dan sekitarnya.
+      </p>
+    </div>
+  </div>
+
+  <!-- Interactive Contact Form & WhatsApp Trigger -->
+  <ContactSection />
+
+  <!-- Surabaya Branch / Office Location -->
+  <BranchesSection />
+</Layout>
