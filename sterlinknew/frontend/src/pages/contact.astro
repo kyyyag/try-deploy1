@@ -3,12 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import ContactSection from '../components/ContactSection.astro';
 import BranchesSection from '../components/BranchesSection.astro';
 import { siteConfig } from '../data/siteConfig.js';
+
+const title = `Kontak & Kantor Layanan | ${siteConfig.company.name}`;
+const description = `Hubungi admin WhatsApp ${siteConfig.company.name} atau kunjungi kantor layanan kami di Surabaya.`;
 ---
 
 <Layout 
-  title={`Kontak & Kantor Layanan | ${siteConfig.company.name}`}
-  description={`Hubungi admin WhatsApp ${siteConfig.company.name} atau kunjungi kantor layanan kami di Surabaya.`}
+  title={title}
+  description={description}
 >
+
   <!-- Page Header -->
   <div class="bg-gradient-to-b from-indigo-50/60 to-white py-16 sm:py-20 border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
