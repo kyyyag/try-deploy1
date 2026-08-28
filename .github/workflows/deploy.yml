@@ -17,11 +17,17 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
+      # LANGKAH BARU: Memaksa instalasi Node.js versi 22
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
           path: ./sterlinknew/frontend
-          node-version: 22 # Baris ini ditambahkan untuk mengatasi error Node.js
+          node-version: "22"
 
   deploy:
     needs: build
