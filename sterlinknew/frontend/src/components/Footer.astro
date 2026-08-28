@@ -14,13 +14,13 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
           <img
             src={`${base}images/Logo.png`}
             alt="Sterlink Logo"
-            class="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(99,102,241,0.3)]"
+            class="w-10 h-10 rounded-full object-contain drop-shadow-[0_0_8px_rgba(99,102,241,0.3)]"
           />
           <div class="flex flex-col">
             <img
               src={`${base}images/sterlink-name.jpeg`}
               alt={siteConfig.company.name}
-              class="h-6 w-auto object-contain brightness-0 invert opacity-90"
+              class="h-6 w-auto object-contain invert mix-blend-screen opacity-90"
             />
             <span class="block text-xs font-semibold uppercase text-indigo-400 mt-1">
               Internet Service Provider
