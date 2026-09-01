@@ -23,7 +23,7 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
         <img 
           src={`${base}images/sterlink-name.png`} 
           alt={siteConfig.company.name} 
-          class="h-8 sm:h-10 w-auto object-contain brightness-0 invert inline-block -mt-1"
+          class="h-[1.2em] w-auto object-contain brightness-0 invert inline-block"
         />
       </h1>
       <p class="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
@@ -41,8 +41,7 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
       <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
         <h2 class="text-3xl font-black text-white">Komitmen & Keunggulan Layanan Kami</h2>
         <p class="text-gray-400 text-sm sm:text-base">
-          <img src={`${base}images/sterlink-name.png`} alt={siteConfig.company.name} class="h-4 w-auto inline-block brightness-0 invert -mt-1 mr-1" />
-          hadir memberikan solusi internet berkecepatan tinggi dengan standar kualitas terbaik untuk warga Surabaya.
+          {siteConfig.company.name} hadir memberikan solusi internet berkecepatan tinggi dengan standar kualitas terbaik untuk warga Surabaya.
         </p>
       </div>
 
