@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../data/siteConfig.js';
+---
+
+<Layout 
+  title={`Speed Test | ${siteConfig.company.name}`}
+  description={`Cek kecepatan koneksi internet Anda bersama ${siteConfig.company.name}.`}
+>
+  <!-- Page Header -->
+  <div class="bg-gradient-to-b from-[#0d0d2b] to-[#0a0a1a] py-16 sm:py-20 border-b border-indigo-500/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block text-xs font-black tracking-widest text-indigo-400 uppercase mb-2">
+        Network Tools
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight">
+        Uji Kecepatan Internet
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+        Gunakan tool di bawah ini untuk mengetahui kecepatan download, upload, dan ping (latency) dari koneksi internet Anda saat ini.
+      </p>
+    </div>
+  </div>
+
+  <!-- Speedtest Embed Section -->
+  <section class="py-12 sm:py-20 bg-[#0a0a1a]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Interactive Speedtest iframe container -->
+      <div class="rounded-3xl overflow-hidden glass-card shadow-2xl shadow-indigo-900/20 border border-indigo-500/20 bg-[#0f0f2a] min-h-[600px] flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 pointer-events-none"></div>
+        <iframe 
+          width="100%" 
+          height="650px" 
+          frameborder="0" 
+          src="https://librespeed.org/"
+          class="w-full h-[650px] relative z-10"
+          title="Internet Speed Test"
+        ></iframe>
+      </div>
+
+      <div class="mt-8 p-6 rounded-2xl bg-indigo-900/10 border border-indigo-500/10 text-center">
+        <h3 class="text-lg font-bold text-white mb-2">Tips Tes Kecepatan Akurat</h3>
+        <ul class="text-sm text-gray-400 space-y-1 inline-block text-left list-disc list-inside">
+          <li>Gunakan koneksi kabel LAN/Ethernet jika memungkinkan.</li>
+          <li>Jika menggunakan Wi-Fi, pastikan berada di dekat router.</li>
+          <li>Tutup aplikasi yang mengunduh/mengunggah file besar selama pengetesan.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

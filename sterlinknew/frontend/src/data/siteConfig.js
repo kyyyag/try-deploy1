@@ -15,13 +15,17 @@ export const siteConfig = {
 
   contact: {
     // Nomor WhatsApp utama
-    whatsappNumber: "62811377455",
-    whatsappDisplay: "0811-377-455",
+    whatsappNumber: "62817383337",
+    whatsappDisplay: "0817-383-3337",
     defaultMessage: "Halo Admin SterlinkNet, saya tertarik untuk berlangganan layanan internet.",
 
-    // WhatsApp Informasi Aktivasi & Paket
+    // WhatsApp Informasi Aktivasi & Paket (sekarang sama dengan utama)
     whatsappActivation: "62817383337",
     whatsappActivationDisplay: "0817-383-3337",
+    
+    // WhatsApp Enterprise / Proyek Gedung (nomor lama)
+    whatsappEnterprise: "62811377455",
+    whatsappEnterpriseDisplay: "0811-377-455",
 
     // WhatsApp Customer Service
     whatsappCS: "62818129969",
@@ -29,7 +33,7 @@ export const siteConfig = {
 
     // Social Media Links
     socialMedia: {
-      whatsapp: "https://wa.me/62811377455?text=Halo%20Admin%20SterlinkNet%2C%20saya%20tertarik%20dengan%20layanan%20internet",
+      whatsapp: "https://wa.me/62817383337?text=Halo%20Admin%20SterlinkNet%2C%20saya%20tertarik%20dengan%20layanan%20internet",
       facebook: "https://www.facebook.com/share/1EQ67ziAr4/",
       instagram: "https://www.instagram.com/sterlinknet?igsi=MTdrODhkMGdnbmY0MA=="
     },
@@ -43,7 +47,7 @@ export const siteConfig = {
     {
       city: "Surabaya",
       address: "Jl. Darmokali No.61, RT. 004, RW 004, Kel. Darmo, Kec. Wonokromo, Surabaya, Jawa Timur 60241",
-      phone: "62811377455",
+      phone: "62817383337",
       email: "@sterlinknet",
       isHeadquarters: true
     }
@@ -133,6 +137,11 @@ export const siteConfig = {
   getCSWaLink(customText) {
     const text = customText || "Halo Customer Service SterlinkNet, saya butuh bantuan.";
     return `https://wa.me/${this.contact.whatsappCS}?text=${encodeURIComponent(text)}`;
+  },
+
+  getEnterpriseWaLink(customText) {
+    const text = customText || "Halo Admin SterlinkNet, saya tertarik berdiskusi mengenai proyek jaringan dedicated / corporate internet.";
+    return `https://wa.me/${this.contact.whatsappEnterprise}?text=${encodeURIComponent(text)}`;
   },
 
   getPackageWaLink(pkgName, speed, price) {

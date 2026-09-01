@@ -46,6 +46,13 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
           Kontak & Cabang
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full rounded-full"></span>
         </a>
+        <a href={`${base}speedtest`} class="text-sm font-semibold text-gray-300 hover:text-indigo-400 transition-colors duration-200 py-1 relative group flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          Speed Test
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-500 transition-all duration-300 group-hover:w-full rounded-full"></span>
+        </a>
       </nav>
 
       <!-- Action Button (WhatsApp Direct) -->
@@ -93,6 +100,12 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
     </a>
     <a href={`${base}contact`} class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-200 hover:bg-indigo-500/10 hover:text-indigo-400 transition-colors">
       Kontak & Cabang
+    </a>
+    <a href={`${base}speedtest`} class="block px-3 py-2 rounded-lg text-base font-semibold text-emerald-300 hover:bg-emerald-500/10 hover:text-emerald-400 transition-colors flex items-center gap-2">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+      Speed Test
     </a>
     <div class="pt-2">
       <a 

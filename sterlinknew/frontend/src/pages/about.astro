@@ -16,8 +16,13 @@ const waLink = siteConfig.getWaLink("Halo Admin SterlinkNet, saya ingin bertanya
       <span class="inline-block text-xs font-black tracking-widest text-indigo-400 uppercase mb-2">
         Profil Perusahaan
       </span>
-      <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight">
-        Tentang {siteConfig.company.name}
+      <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight flex flex-wrap items-center justify-center gap-3">
+        Tentang 
+        <img 
+          src="/images/sterlink-name.png" 
+          alt={siteConfig.company.name} 
+          class="h-8 sm:h-10 w-auto object-contain brightness-0 invert inline-block -mt-1"
+        />
       </h1>
       <p class="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
         Menghubungkan masyarakat dengan koneksi internet cepat, stabil, dan infrastruktur 100% fiber optic murni di tahun {siteConfig.company.establishedYear}.
@@ -34,7 +39,8 @@ const waLink = siteConfig.getWaLink("Halo Admin SterlinkNet, saya ingin bertanya
       <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
         <h2 class="text-3xl font-black text-white">Komitmen & Keunggulan Layanan Kami</h2>
         <p class="text-gray-400 text-sm sm:text-base">
-          {siteConfig.company.name} hadir memberikan solusi internet berkecepatan tinggi dengan standar kualitas terbaik untuk warga Surabaya.
+          <img src="/images/sterlink-name.png" alt={siteConfig.company.name} class="h-4 w-auto inline-block brightness-0 invert -mt-1 mr-1" />
+          hadir memberikan solusi internet berkecepatan tinggi dengan standar kualitas terbaik untuk warga Surabaya.
         </p>
       </div>
 
