@@ -4,6 +4,8 @@ import AboutSection from '../components/AboutSection.astro';
 import BranchesSection from '../components/BranchesSection.astro';
 import { siteConfig } from '../data/siteConfig.js';
 const waLink = siteConfig.getWaLink("Halo Admin SterlinkNet, saya ingin bertanya seputar profil dan kerjasama perusahaan.");
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
 ---
 
 <Layout 
@@ -19,7 +21,7 @@ const waLink = siteConfig.getWaLink("Halo Admin SterlinkNet, saya ingin bertanya
       <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight flex flex-wrap items-center justify-center gap-3">
         Tentang 
         <img 
-          src="/images/sterlink-name.png" 
+          src={`${base}images/sterlink-name.png`} 
           alt={siteConfig.company.name} 
           class="h-8 sm:h-10 w-auto object-contain brightness-0 invert inline-block -mt-1"
         />
@@ -39,7 +41,7 @@ const waLink = siteConfig.getWaLink("Halo Admin SterlinkNet, saya ingin bertanya
       <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
         <h2 class="text-3xl font-black text-white">Komitmen & Keunggulan Layanan Kami</h2>
         <p class="text-gray-400 text-sm sm:text-base">
-          <img src="/images/sterlink-name.png" alt={siteConfig.company.name} class="h-4 w-auto inline-block brightness-0 invert -mt-1 mr-1" />
+          <img src={`${base}images/sterlink-name.png`} alt={siteConfig.company.name} class="h-4 w-auto inline-block brightness-0 invert -mt-1 mr-1" />
           hadir memberikan solusi internet berkecepatan tinggi dengan standar kualitas terbaik untuk warga Surabaya.
         </p>
       </div>
@@ -63,7 +65,7 @@ const waLink = siteConfig.getWaLink("Halo Admin SterlinkNet, saya ingin bertanya
         </div>
 
         <div class="p-8 rounded-3xl glass-card hover:border-emerald-500/30 transition-all">
-          <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-400 mb-2">99.9%</div>
+          <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-400 mb-2">99.5%</div>
           <h3 class="text-base font-bold text-white mb-2">Jaminan Uptime</h3>
           <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
             Infrastruktur jaringan handal yang dirancang untuk stabilitas maksimal saat streaming, gaming, meeting online, maupun bisnis.

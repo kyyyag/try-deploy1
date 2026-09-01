@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import PricingSection from '../components/PricingSection.astro';
 import ContactSection from '../components/ContactSection.astro';
 import { siteConfig } from '../data/siteConfig.js';
+const waLink = siteConfig.getWaLink("Halo Admin SterlinkNet, saya tertarik untuk berlangganan paket internet.");
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
 ---
 
 <Layout 
@@ -15,9 +18,9 @@ import { siteConfig } from '../data/siteConfig.js';
       <span class="inline-block text-xs font-black tracking-widest text-indigo-400 uppercase mb-2">
         Katalog Layanan
       </span>
-      <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight flex flex-wrap items-center justify-center gap-3">
-        Pilihan Paket Internet 
-        <img src="/images/sterlink-name.png" alt={siteConfig.company.name} class="h-8 sm:h-10 w-auto inline-block brightness-0 invert -mt-1" />
+      <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight flex flex-wrap justify-center items-center gap-3">
+        Paket Layanan 
+        <img src={`${base}images/sterlink-name.png`} alt={siteConfig.company.name} class="h-8 sm:h-10 w-auto object-contain shrink-0 inline-block brightness-0 invert -mt-1" />
       </h1>
       <p class="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
         Koneksi fiber optic murni dengan kecepatan simetris 1:1, bebas kuota, dan harga bulanan yang bersahabat.
@@ -39,8 +42,8 @@ import { siteConfig } from '../data/siteConfig.js';
         
         <div class="glass-card p-6 rounded-2xl">
           <h3 class="text-base font-bold text-white mb-2">Apakah ada batas pemakaian wajar (FUP)?</h3>
-          <p class="text-sm text-gray-400">
-            Tidak ada. Semua paket layanan <img src="/images/sterlink-name.png" alt={siteConfig.company.name} class="h-3.5 w-auto inline-block brightness-0 invert -mt-0.5" /> bersifat True Unlimited tanpa penurunan kecepatan (No FUP).
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Tidak ada. Semua paket layanan <img src={`${base}images/sterlink-name.png`} alt={siteConfig.company.name} class="h-3.5 w-auto object-contain shrink-0 inline-block brightness-0 invert -mt-0.5" /> bersifat True Unlimited tanpa penurunan kecepatan (No FUP).
           </p>
         </div>
 
